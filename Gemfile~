@@ -6,9 +6,6 @@ gem 'rails', '4.0.2'
 # Add Devise, authentication
 gem 'devise'
 
-# needed for using attr_accessible
-gem 'protected_attributes'
-
 # Use postgres as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
