@@ -1,5 +1,0 @@
-rails generate model User name:string email:string description:text posts-visible_to_all:boolean
-
-rails generate model Post title:string description:text user:belongs_to
-
-rails generate model Friend username:string user:belongs_to
