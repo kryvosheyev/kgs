@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'heroku'
+gem 'pg', group: :production
+
 
 # Add Devise, authentication
 gem 'devise'
@@ -11,7 +14,7 @@ gem 'protected_attributes'
 
 # Use postgres as the database for Active Record
 #gem 'sqlite3'
-gem 'pg'
+#gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
