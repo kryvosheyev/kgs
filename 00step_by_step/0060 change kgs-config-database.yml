@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: kgs_development
+  username: root
+  password: 123
+  host: localhost
