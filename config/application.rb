@@ -8,6 +8,14 @@ Bundler.require(:default, Rails.env)
 
 module Kgs
   class Application < Rails::Application
+    config.generators do |g|
+      g.test_framework :rspec, :view_spec => false,
+                       :fixture => true,
+                       :fixture_replacement => "factory_girl"
+      g.assets = false
+      g.helper = false
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -21,3 +29,5 @@ module Kgs
     # config.i18n.default_locale = :de
   end
 end
+
+
