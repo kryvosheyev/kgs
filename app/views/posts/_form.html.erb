@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <%= f.label :"Тема", for:"input01"%></br>
+    <%= f.text_field :title, id:"input01" %></br>
+
+    <%= f.label :"Описание", for:"input02"%></br>
+    <%= f.text_area :description, id:"input02", :rows => 10 %></br>
+
+    <%= link_to 'Назад', posts_path%> | <%= f.submit "Сохранить" %>
+<% end %>

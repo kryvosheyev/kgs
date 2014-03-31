@@ -5,7 +5,7 @@
 
 <h3>you have succesfully signed in</h3>
 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-
+<%= link_to "Posts", posts_path() %>
 <% else %>
 
 <h1> Welcome to project "Achievements journal" </h1>

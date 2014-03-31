@@ -1,0 +1,16 @@
+<h1>Post#index</h1>
+<p>Find me in app/views/post/index.html.erb</p>
+<%= link_to 'Добавить пост', new_post_path() %>
+<table>
+  <th>Title</th>
+  <th>Text</th>
+  <th>Actions</th>
+  <% @posts.each do |post| %>
+      <tr>
+        <td> <%= link_to  post.title, post_path(post)%> </td>
+        <td> <%= post.description %> </td>
+        <td><%= link_to 'Редактировать', edit_post_path(post)%> |
+          <%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Вы уверины?'} %></td>
+      </tr>
+  <% end %>
+</table>
