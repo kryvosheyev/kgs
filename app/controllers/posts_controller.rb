@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def index
-    @posts = Post.all
+    @posts = Post.empty_desc.all
   end
 
   def show
