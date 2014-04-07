@@ -1,8 +1,7 @@
 Kgs::Application.routes.draw do
-  root 'home#index'
   get "welcome/index"
   get "devise/registrations"
-
+  root 'posts#index'
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,7 +9,7 @@ Kgs::Application.routes.draw do
 
 
   devise_for :users,:controllers => { :registrations =>'registration'}
-  get 'dashboard' => 'home#dashboard'
+  get 'dashboard' => 'posts#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
