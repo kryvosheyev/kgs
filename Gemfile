@@ -8,9 +8,10 @@ gem 'pg', group: :production
 
 # Add Devise, authentication
 gem 'devise'
-
+gem 'cancancan', '~> 1.7'
+gem 'simple_form'
 # needed for using attr_accessible
-gem 'protected_attributes'
+#gem 'protected_attributes'
 
 # Use postgres as the database for Active Record
 #gem 'sqlite3'
