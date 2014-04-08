@@ -10,6 +10,7 @@ gem 'pg', group: :production
 gem 'devise'
 gem 'cancancan', '~> 1.7'
 gem 'simple_form'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # needed for using attr_accessible
 #gem 'protected_attributes'
 
