@@ -1,11 +1,6 @@
-<%= form_for @post do |f| %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-
-    <%= f.label :"Тема", for:"input01"%></br>
-    <%= f.text_field :title, id:"input01" %></br>
-
-    <%= f.label :"Описание", for:"input02"%></br>
-    <%= f.text_area :description, id:"input02", :rows => 10 %></br>
-
-    <%= link_to 'Назад', posts_path%> | <%= f.submit "Сохранить" %>
+<%= simple_form_for @post do |f| %>
+    <%= f.input :user_id,:as => :hidden, input_html: { :value => current_user.id } %>
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :description, :rows => 10, label: "Description" %>
+    <%= link_to 'Back', posts_path, class: "btn" %>  <%= f.submit "Save", class: 'btn' %>
 <% end %>
