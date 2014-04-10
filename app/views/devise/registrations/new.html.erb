@@ -1,21 +1,16 @@
-<h2>Sign up</h2>
+<form class="form-signin">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <h3 class="form-signin-heading">Please Sign up</h3>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+    <%= f.input :name %>
+    <%= f.input :email, autofocus: true %>
+    <%= f.input :password, autocomplete: "off" %>
+    <%= f.input :password_confirmation, autocomplete: "off" %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+    <%= f.submit "Sign up", class: 'btn' %>
+    <%= render "devise/shared/links" %>
+  <% end %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</form>
