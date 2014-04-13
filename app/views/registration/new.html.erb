@@ -9,8 +9,8 @@
     <%= f.input :password, autocomplete: "off" %>
     <%= f.input :password_confirmation, autocomplete: "off" %>
 
-    <%= f.submit "Sign up", class: 'btn' %>
-    <%= render "devise/shared/links" %>
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+    <%= link_to "Sign in", new_session_path(resource_name), class: 'btn btn-primary pull-right' %>
   <% end %>
 
 </form>

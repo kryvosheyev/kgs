@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.controls input#user_password,
+.controls input#user_email,
+.controls input#user_name,
+.controls input#user_password_confirmation {
+  width: 286px;
+}
+
 
 .form-signin {
   background-color: #FFFFFF;
@@ -15,5 +22,5 @@
 
 .form-signin h3 {
   text-align: center;
-  text-shadow: 1px 1px 0x #999;
+  text-shadow: 0px 1px 0x #999;
 }

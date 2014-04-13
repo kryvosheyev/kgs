@@ -6,9 +6,9 @@
     <%= f.input :email, placeholder: 'user@domain.com' %>
     <%= f.input :password, autocomplete: "off" %>
     <% if devise_mapping.rememberable? %>
-    <%= f.input :remember_me, as: :boolean, inline_label: 'Remember me', label: false %>
+      <%= f.input :remember_me, as: :boolean, inline_label: 'Remember me', label: false %>
     <% end %>
-    <%= f.submit "Sign in", class: 'btn' %>
+    <%= f.submit "Sign in", class: 'btn btn-primary' %>
     
     <%= render "devise/shared/links" %>
   <% end %>
