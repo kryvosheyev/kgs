@@ -29,6 +29,6 @@ class Ability
     # See the wiki for details:
     # https://github.com/bryanrite/cancancan/wiki/Defining-Abilities
     can [:read, :create], Post
-    can [:update, :destroy], Post, user: user
+    can [:update, :destroy], Post#, user: user
   end
 end

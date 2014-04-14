@@ -23,7 +23,7 @@ test:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 
-test:
+production:
   adapter: postgresql
   encoding: utf8
   database: kgs_production
