@@ -1,32 +1,16 @@
-<h2>Sign up</h2>
+<form class="form-signin">
 
-<%= form_tag(user_registration_path,:method => 'post') %>
-<%= devise_error_messages! %>
-<table>
+  <h3 class="form-signin-heading">Please Sign up</h3>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-<tr>
-<td>name : </td>
-<td><%=text_field_tag "user[name]",@user.name %></td>
-</tr>
+    <%= f.input :name %>
+    <%= f.input :email, autofocus: true %>
+    <%= f.input :password, autocomplete: "off" %>
+    <%= f.input :password_confirmation, autocomplete: "off" %>
 
-<tr>
-<td>Email : </td>
-<td><%=email_field_tag "user[email]",@user.email %></td>
-</tr>
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+    <%= link_to "Sign in", new_session_path(resource_name), class: 'btn btn-primary pull-right' %>
+  <% end %>
 
-<tr>
-<td>Password : </td>
-<td><%=password_field_tag "user[password]",@user.password %></td>
-</tr>
-
-<tr>
-<td>Retype password : </td>
-<td><%=password_field_tag "user[password_confirmation]",@user.password_confirmation %></td>
-</tr>
-
-<tr>
-<td><%= submit_tag nil, :class => "form_submit"%></td>
-</tr>
-</table>
-<br />
-<%= render :partial => "devise/shared/links" %>
+</form>
