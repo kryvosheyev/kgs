@@ -1,6 +1,6 @@
 Kgs::Application.routes.draw do
   get "welcome/index"
-  get "devise/registrations"
+  #get "devise/registrations"
   root 'posts#index'
   resources :posts
 
@@ -8,8 +8,9 @@ Kgs::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-  devise_for :users,:controllers => { :registrations =>'registration'}
+  devise_for :users, :controllers => { :registrations =>'registration' }
   get 'dashboard' => 'posts#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

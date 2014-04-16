@@ -1,18 +1,19 @@
-<form class="form-signin">
+<div class="form-signin">
 
   <h3 class="form-signin-heading">Please sign in</h3>
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <%= f.input :email, placeholder: 'user@domain.com' %>
-    <%= f.input :password, autocomplete: "off" %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: :post) do |f| %>
+    <%= f.input :email, placeholder: 'user@domain.com', required: true %>
+    <%= f.input :password, autocomplete: "off", required: true %>
     <% if devise_mapping.rememberable? %>
       <%= f.input :remember_me, as: :boolean, inline_label: 'Remember me', label: false %>
     <% end %>
-    <%= f.submit "Sign in", class: 'btn btn-primary' %>
+
+    <%= f.submit "Sign in", class: 'btn btn-primary pull-right' %>
     
-    <%= render "devise/shared/links" %>
+   <%= link_to "Sign up", new_registration_path(resource_name), class: 'btn' %>
   <% end %>
 
-</form>
+</div>
 
 

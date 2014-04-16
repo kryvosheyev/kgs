@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  load_and_authorize_resource param_method: :project_params
+  load_and_authorize_resource param_method: :post_params
   before_filter :find_post, :only => [:show, :edit, :update, :destroy]
 
   def new

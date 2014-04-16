@@ -8,12 +8,7 @@ class RegistrationController < Devise::RegistrationsController
   end
 
   def create
-    @user = User.new
-    @user.name = params[:user][:name]
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
-    @user.password_confirmation =params[:user][:password_confirmation]
-
+    @user = User.new(user_params)
     @user.valid?
     if @user.errors.blank?
       @user.save
@@ -21,6 +16,13 @@ class RegistrationController < Devise::RegistrationsController
     else
       render :action => "new"
     end
+  end
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password, :email, :password_confirmation)
   end
 
 end
